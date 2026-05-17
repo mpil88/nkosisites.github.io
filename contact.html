@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Nkosi Sites</title>
+    <meta name="description" content="Get in touch with Nkosi Sites. Contact us for website quotes, consultations, and Flippa selling services.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <h1 class="logo">Nkosi Sites</h1>
+                <p class="tagline">Premium Websites for Flippa Success</p>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Title -->
+    <section class="page-title">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p>Let's discuss your website and Flippa goals</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-container">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    
+                    <div class="contact-method">
+                        <strong>📞 Phone</strong>
+                        <p><a href="tel:+27604913359">0604913359</a></p>
+                        <small>WhatsApp & Voice Calls Available</small>
+                    </div>
+
+                    <div class="contact-method">
+                        <strong>📧 Email</strong>
+                        <p><a href="mailto:mpilo@nkosisites.com">mpilo@nkosisites.com</a></p>
+                        <small>Response within 24 hours</small>
+                    </div>
+
+                    <div class="contact-method">
+                        <strong>👤 Contact Person</strong>
+                        <p>Mpilo Nkosi</p>
+                        <small>Web Designer & Developer</small>
+                    </div>
+
+                    <div class="contact-method">
+                        <strong>⏰ Response Time</strong>
+                        <p>Usually within 12-24 hours</p>
+                        <small>Business hours: Mon-Fri 9AM-6PM (SA Time)</small>
+                    </div>
+
+                    <!-- Why Choose Section -->
+                    <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(37, 99, 235, 0.1); border-radius: 0.75rem;">
+                        <h4 style="color: var(--primary-color); margin-bottom: 1rem;">Why Work With Us?</h4>
+                        <ul style="list-style: none; color: var(--text-light); font-size: 0.9rem;">
+                            <li style="margin-bottom: 0.5rem;">✓ Flippa specialization & expertise</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Proven track record of sales</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Transparent pricing & timelines</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Personalized strategy for your niche</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Ongoing support & optimization</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h3 style="margin-bottom: 1.5rem; color: var(--text-dark);">Send Us a Message</h3>
+                    <form id="contactForm" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">Service Interested In *</label>
+                            <select id="service" name="service" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 0.5rem; font-family: inherit; font-size: 1rem;" required>
+                                <option value="">-- Select Service --</option>
+                                <option value="website-design">Custom Website Design</option>
+                                <option value="revenue-setup">Revenue Setup & Integration</option>
+                                <option value="seo">SEO & Traffic Growth</option>
+                                <option value="flippa-prep">Flippa Listing Preparation</option>
+                                <option value="content">Content & Growth Strategy</option>
+                                <option value="done-for-you">Done-For-You Package</option>
+                                <option value="consultation">Consultation & Strategy</option>
+                                <option value="other">Other / Not Sure</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="niche">Your Niche / Industry</label>
+                            <input type="text" id="niche" name="niche" placeholder="e.g., Tech Blog, Fitness E-commerce, etc.">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="budget">Budget Range</label>
+                            <select id="budget" name="budget" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 0.5rem; font-family: inherit; font-size: 1rem;">
+                                <option value="">-- Select Budget --</option>
+                                <option value="under-1000">Under $1,000</option>
+                                <option value="1000-3000">$1,000 - $3,000</option>
+                                <option value="3000-5000">$3,000 - $5,000</option>
+                                <option value="5000-10000">$5,000 - $10,000</option>
+                                <option value="above-10000">$10,000+</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" required placeholder="Tell us about your project, goals, and timeline..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.85rem;">Send Message</button>
+                    </form>
+                    <div id="formMessage" style="margin-top: 1rem; padding: 1rem; border-radius: 0.5rem; display: none;"></div>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div style="margin-top: 3rem; padding-top: 3rem; border-top: 1px solid var(--border-color);">
+                <h3 style="color: var(--text-dark); margin-bottom: 2rem; text-align: center;">Frequently Asked Questions</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                    <div>
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.75rem;">How long does it take to build a website?</h4>
+                        <p style="color: var(--text-light); font-size: 0.95rem;">Timeline depends on the package. Starter designs take 2-3 weeks, while complete done-for-you packages take 60-90 days including content and traffic building.</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.75rem;">Will my website be ready for Flippa?</h4>
+                        <p style="color: var(--text-light); font-size: 0.95rem;">Yes! All our sites are specifically built with Flippa success in mind. We handle documentation, revenue verification, and optimization for buyer appeal.</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.75rem;">What if I don't have a niche idea?</h4>
+                        <p style="color: var(--text-light); font-size: 0.95rem;">We offer niche research and selection consultation. We'll help you find a profitable niche with strong monetization potential and buyer interest.</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.75rem;">Do you offer ongoing support after launch?</h4>
+                        <p style="color: var(--text-light); font-size: 0.95rem;">Yes! All packages include launch support. We also offer maintenance packages (from $200/mo) for ongoing optimization and updates.</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.75rem;">What if my site doesn't sell on Flippa?</h4>
+                        <p style="color: var(--text-light); font-size: 0.95rem;">We focus on creating sites with strong fundamentals that attract buyers. We provide strategic guidance throughout the process to maximize your listing's appeal.</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.75rem;">Can I own the website code?</h4>
+                        <p style="color: var(--text-light); font-size: 0.95rem;">Yes! You own and control everything. We use modern, standard technologies so you're never locked in or dependent on us.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Let's Start Building Your Success</h2>
+            <p>Reach out today for a free consultation and no-obligation quote for your website project.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="tel:+27604913359" class="btn btn-primary" style="text-decoration: none;">📞 Call Now</a>
+                <a href="mailto:mpilo@nkosisites.com" class="btn btn-secondary" style="text-decoration: none;">✉️ Email Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Nkosi Sites</h4>
+                    <p>Creating premium websites for Flippa buyers and digital entrepreneurs.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Phone: <a href="tel:+27604913359">0604913359</a></p>
+                    <p>Email: <a href="mailto:mpilo@nkosisites.com">mpilo@nkosisites.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Nkosi Sites. All rights reserved. Created by Mpilo Nkosi (Coding)</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const form = document.getElementById('contactForm');
+            const formData = new FormData(form);
+            const messageDiv = document.getElementById('formMessage');
+            
+            // Create mailto link with form data
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const phone = formData.get('phone');
+            const service = formData.get('service');
+            const niche = formData.get('niche');
+            const budget = formData.get('budget');
+            const message = formData.get('message');
+            
+            const subject = `Website Inquiry from ${name}`;
+            const body = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nService: ${service}\nNiche: ${niche}\nBudget: ${budget}\n\nMessage:\n${message}`;
+            
+            const mailtoLink = `mailto:mpilo@nkosisites.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Show success message
+            messageDiv.style.display = 'block';
+            messageDiv.style.backgroundColor = 'rgba(16, 185, 129, 0.1)';
+            messageDiv.style.borderLeft = '4px solid var(--success-color)';
+            messageDiv.style.color = 'var(--success-color)';
+            messageDiv.innerHTML = `
+                <strong>Thank you for reaching out!</strong><br>
+                Your message will be prepared to send via email. Click the button below to complete the submission, or we'll follow up directly.
+                <br><br>
+                <a href="${mailtoLink}" style="color: var(--success-color); font-weight: bold;">Click here to send via email</a>
+            `;
+            
+            // Reset form
+            setTimeout(() => {
+                form.reset();
+            }, 500);
+        }
+    </script>
+</body>
+</html>
