@@ -48,7 +48,7 @@
 
                     <div class="contact-method">
                         <strong>📧 Email</strong>
-                        <p><a href="mailto:mpilo@nkosisites.com">mpilo@nkosisites.com</a></p>
+                        <p><a href="mailto:mpilonkosi926@gmail.com">mpilonkosi926@gmail.com</a></p>
                         <small>Response within 24 hours</small>
                     </div>
 
@@ -179,7 +179,7 @@
             <p>Reach out today for a free consultation and no-obligation quote for your website project.</p>
             <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
                 <a href="tel:+27604913359" class="btn btn-primary" style="text-decoration: none;">📞 Call Now</a>
-                <a href="mailto:mpilo@nkosisites.com" class="btn btn-secondary" style="text-decoration: none;">✉️ Email Us</a>
+                <a href="mailto:mpilonkosi926@gmail.com" class="btn btn-secondary" style="text-decoration: none;">✉️ Email Us</a>
             </div>
         </div>
     </section>
@@ -203,7 +203,7 @@
                 <div class="footer-section">
                     <h4>Contact</h4>
                     <p>Phone: <a href="tel:+27604913359">0604913359</a></p>
-                    <p>Email: <a href="mailto:mpilo@nkosisites.com">mpilo@nkosisites.com</a></p>
+                    <p>Email: <a href="mailto:mpilonkosi926@gmail.com">mpilonkosi926@gmail.com</a></p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -212,44 +212,72 @@
         </div>
     </footer>
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js"></script>
     <script>
+        // Initialize EmailJS
+        emailjs.init('HRZ3FzLIp_EEgA8H9');
+
         function handleSubmit(event) {
             event.preventDefault();
             
             const form = document.getElementById('contactForm');
             const formData = new FormData(form);
             const messageDiv = document.getElementById('formMessage');
+            const submitButton = form.querySelector('button[type="submit"]');
             
-            // Create mailto link with form data
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const phone = formData.get('phone');
-            const service = formData.get('service');
-            const niche = formData.get('niche');
-            const budget = formData.get('budget');
-            const message = formData.get('message');
+            // Store original button text
+            const originalButtonText = submitButton.textContent;
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
             
-            const subject = `Website Inquiry from ${name}`;
-            const body = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nService: ${service}\nNiche: ${niche}\nBudget: ${budget}\n\nMessage:\n${message}`;
+            const templateParams = {
+                to_email: 'mpilonkosi926@gmail.com',
+                from_name: formData.get('name'),
+                from_email: formData.get('email'),
+                phone: formData.get('phone') || 'Not provided',
+                service: formData.get('service'),
+                niche: formData.get('niche') || 'Not specified',
+                budget: formData.get('budget') || 'Not specified',
+                message: formData.get('message')
+            };
             
-            const mailtoLink = `mailto:mpilo@nkosisites.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            
-            // Show success message
-            messageDiv.style.display = 'block';
-            messageDiv.style.backgroundColor = 'rgba(16, 185, 129, 0.1)';
-            messageDiv.style.borderLeft = '4px solid var(--success-color)';
-            messageDiv.style.color = 'var(--success-color)';
-            messageDiv.innerHTML = `
-                <strong>Thank you for reaching out!</strong><br>
-                Your message will be prepared to send via email. Click the button below to complete the submission, or we'll follow up directly.
-                <br><br>
-                <a href="${mailtoLink}" style="color: var(--success-color); font-weight: bold;">Click here to send via email</a>
-            `;
-            
-            // Reset form
-            setTimeout(() => {
-                form.reset();
-            }, 500);
+            emailjs.send('service_bwdvwnb', 'template_0hnooqh', templateParams)
+                .then((response) => {
+                    // Show success message
+                    messageDiv.style.display = 'block';
+                    messageDiv.style.backgroundColor = 'rgba(16, 185, 129, 0.1)';
+                    messageDiv.style.borderLeft = '4px solid #10b981';
+                    messageDiv.style.color = '#10b981';
+                    messageDiv.innerHTML = `
+                        <strong>✓ Message Sent Successfully!</strong><br>
+                        Thank you for your inquiry! We've received your message and will respond within 24 hours.
+                    `;
+                    
+                    // Reset form and button
+                    form.reset();
+                    submitButton.disabled = false;
+                    submitButton.textContent = originalButtonText;
+                    
+                    // Hide message after 5 seconds
+                    setTimeout(() => {
+                        messageDiv.style.display = 'none';
+                    }, 5000);
+                })
+                .catch((error) => {
+                    // Show error message
+                    messageDiv.style.display = 'block';
+                    messageDiv.style.backgroundColor = 'rgba(239, 68, 68, 0.1)';
+                    messageDiv.style.borderLeft = '4px solid #ef4444';
+                    messageDiv.style.color = '#ef4444';
+                    messageDiv.innerHTML = `
+                        <strong>✗ Oops! Something went wrong</strong><br>
+                        There was an issue sending your message. Please try again or contact us directly at 0604913359.
+                    `;
+                    
+                    // Re-enable button
+                    submitButton.disabled = false;
+                    submitButton.textContent = originalButtonText;
+                });
         }
     </script>
 </body>
